@@ -1,5 +1,7 @@
 # pendulumify
 
+[![Travis-CI Build Status](https://api.travis-ci.org/SpotOnInc/pendulumify.svg)](https://travis-ci.org/SpotOnInc/pendulumify)
+
 Recursively replace Python standard datetime objects with Pendulum instances.
 Can be useful for migrating codebases, or for wrapping database returns or
 similar.
