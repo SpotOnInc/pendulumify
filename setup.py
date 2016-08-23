@@ -21,6 +21,7 @@ setup(
     license='MIT',
     author='SpotOn',
     author_email='josh@spoton.com',
+    keywords=['pendulum', 'time', 'date', 'datetime'],
     packages=[str('pendulumify')],
     platforms='any',
     tests_require=['pytest', 'pytest-cov'],
