@@ -17,7 +17,7 @@ setup(
     version=version,
     description='Recursively replace Python standard datetime objects with Pendulum instances',
     url='https://github.com/SpotOnInc/pendulumify',
-    download_url='https://github.com/SpotOnInc/pendulumify/{0}'.format(version),
+    download_url='https://github.com/SpotOnInc/pendulumify/archive/v{0}.tar.gz'.format(version),
     license='MIT',
     author='SpotOn',
     author_email='josh@spoton.com',
