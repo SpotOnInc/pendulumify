@@ -2,6 +2,7 @@
 
 import datetime
 import pendulum
+from decimal import Decimal
 from pendulumify import pendulumify
 
 
@@ -162,3 +163,19 @@ def test_dictionary_from_generator():
 
     for x in wrapped():
         assert isInstanceOfPendulum(x.get('val'))
+
+
+def test_passthrough_numbers():
+    myint = 1
+    myfloat = 1.1
+    mydec = Decimal('1.1')
+
+    ret = pendulumify({
+        'int': myint,
+        'float': myfloat,
+        'decimal': mydec,
+    })
+
+    assert ret.get('int') == myint
+    assert ret.get('float') == myfloat
+    assert ret.get('decimal') == mydec

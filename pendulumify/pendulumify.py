@@ -10,7 +10,15 @@ from __future__ import (
 from functools import wraps
 
 import inspect
+import numbers
 import pendulum
+
+try:
+    unicode = unicode
+except NameError:
+    basestring = (str, bytes)
+
+PASSTHROUGH_TYPES = (basestring, numbers.Number)
 
 
 class WrappedGenerator(object):
@@ -36,12 +44,7 @@ def pendulumify(obj):
 
     '''
 
-    try:
-        unicode = unicode
-    except NameError:
-        basestring = (str, bytes)
-
-    if isinstance(obj, basestring):
+    if isinstance(obj, PASSTHROUGH_TYPES):
         return obj
 
     if callable(obj):
