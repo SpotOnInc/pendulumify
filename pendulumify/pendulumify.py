@@ -36,6 +36,11 @@ def pendulumify(obj):
 
     '''
 
+    try:
+        unicode = unicode
+    except NameError:
+        basestring = (str, bytes)
+
     if isinstance(obj, basestring):
         return obj
 
