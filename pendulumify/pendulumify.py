@@ -9,6 +9,7 @@ from __future__ import (
 
 from functools import wraps
 
+import collections
 import inspect
 import numbers
 import pendulum
@@ -64,6 +65,9 @@ def pendulumify(obj):
         return pendulum.instance(obj)
     except AttributeError:
         pass
+
+    if not isinstance(obj, collections.Iterable):
+        return obj
 
     constructor = type(obj)
 
